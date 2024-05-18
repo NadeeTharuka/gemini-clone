@@ -7,9 +7,6 @@ const Sidebar = () => {
     const [extended,setExtended] = useState(false)
 
 
-
-
-
   return (
     <div className='sidebar'>
             <div className="top">
@@ -18,26 +15,30 @@ const Sidebar = () => {
                     <img src={assets.plus_icon} alt="" />
                     {extended?<p>New Chat</p>:null}
                 </div>
-                <div className="recent">
+                {extended
+                ?<div className="recent">
                     <p className="recent-title">Recent</p>
                     <div className="recent-entry">
                         <img src={assets.message_icon} alt="" />
                         <p>What is react ...</p>
                     </div>
                 </div>
+                :null
+}
             </div>
             <div className="bottom">
                 <div className="bottom-item recent-entry">
                     <img src={assets.question_icon} alt="" />
-                    <p>Help</p>
+                    {extended?<p>Help</p>:null}
+
                 </div>
                 <div className="bottom-item recent-entry">
                     <img src={assets.history_icon} alt="" />
-                    <p>Activity</p>
+                    {extended?<p>Activity</p>:null}
                 </div>
                 <div className="bottom-item recent-entry">
                     <img src={assets.setting_icon} alt="" />
-                    <p>Settings</p>
+                    {extended?<p>Settings</p>:null}
                 </div>
 
             </div>
