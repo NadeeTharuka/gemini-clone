@@ -17,14 +17,19 @@ const ContextProvider = (props) => {
         await run(prompt)
     }
 
-   
+    
     const contextValue = {
         prevePrompts,
         setPrevPrompts,
         onSent,
         setRecentPrompt,
         recentPrompt,
-        showResult
+        showResult,
+        loading,
+        resultData,
+        input,
+        setInput
+        
     }
 
     return (
